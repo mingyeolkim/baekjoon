@@ -1,26 +1,24 @@
-while True :
-    a = input()
-    stack = []
-
-    if a == "." :
+while 1:
+    arr = []
+    s = input()
+    if s == ".":
         break
-
-    for i in a :
-        if i == '[' or i == '(' :
-            stack.append(i)
-        elif i == ']' :
-            if len(stack) != 0 and stack[-1] == '[' :
-                stack.pop() # 맞으면 지워서 stack을 비워줌 0 = yes
-            else : 
-                stack.append(']')
+    for i in s:
+        if i == '[' or i == '(':
+            arr.append(i)
+        elif i == ']':
+            if len(arr) != 0 and arr[-1] == '[' :
+                arr.pop()
+            else:
+                arr.append(']')
                 break
-        elif i == ')' :
-            if len(stack) != 0 and stack[-1] == '(' :
-                stack.pop()
-            else :
-                stack.append(')')
+        elif i == ')':
+            if len(arr) != 0 and arr[-1] == '(' :
+                arr.pop()
+            else:
+                arr.append(')')
                 break
-    if len(stack) == 0 :
+    if len(arr) == 0:
         print('yes')
-    else :
+    else:
         print('no')
